@@ -22,6 +22,14 @@ export class Login extends React.Component{
         this.props.onLogin(this.state)
     }
 
+    resetLogin = () => {
+        this.setState({
+            username: '',
+            password: '',
+            remember: false
+        })
+    }
+
     componentDidUpdate() {
         console.log(this.state)
     }
@@ -34,6 +42,7 @@ export class Login extends React.Component{
             <input name="password" type="password" value={this.state.password} onChange={this.inputUpdate}/>
             <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.inputUpdate}/>
             <button id="login" disabled={!this.state.username || !this.state.password } onClick={this.loginButton}>Login</button>
+            <button id="reset"  onClick={this.resetLogin}>Reset</button>
         </div>)
     }
 }
