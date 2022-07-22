@@ -19,6 +19,12 @@ export class TodoList extends React.Component {
         }))
     }
 
+    resetButton = () => {
+        this.setState({
+            stringsArr: []
+        })
+    }
+
     render() {
         return (
             <div>
@@ -29,6 +35,7 @@ export class TodoList extends React.Component {
                 </ul>
                 <input onChange={this.newString} value={this.state.value}/>
                 <button onClick={this.addString}>Add String</button>
+                <button onClick={this.resetButton}>Reset Array</button>
             </div>
         )
     }
