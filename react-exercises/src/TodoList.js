@@ -2,18 +2,20 @@ import React from "react";
 
 export class TodoList extends React.Component {
     state = {
-        stringsArr: ["string1", "string2", "string3"]
+        stringsArr: ["string1", "string2", "string3"],
+        value: ""
     }
 
     newString = (string) => {
         this.setState({
-            input: string.target.value
+            value: string.target.value
         })
     }
 
     addString = () => {
-        return this.setState((state) => ({
-            stringsArr: [...state.stringsArr, state.input]
+        this.setState((state) => ({
+            stringsArr: [...state.stringsArr, state.value],
+            value: ""
         }))
     }
 
@@ -25,7 +27,7 @@ export class TodoList extends React.Component {
                         <li key={string + index}>{string}</li>
                     ))}
                 </ul>
-                <input type="text" onChange={this.newString}/>
+                <input onChange={this.newString} value={this.state.value}/>
                 <button onClick={this.addString}>Add String</button>
             </div>
         )
