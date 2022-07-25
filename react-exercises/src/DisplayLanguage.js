@@ -20,6 +20,7 @@ export class DisplayLanguage extends React.Component {
                     <option value="en">ENGLISH</option>
                     <option value="it">ITALIANO</option>
                 </select>
+                <p>La lingua selezionata è <h1>{this.state.language}</h1></p>
             </LanguageContext.Provider>
         )
     }
