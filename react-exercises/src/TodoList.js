@@ -33,7 +33,7 @@ export class TodoList extends React.Component {
 
     render() {
         return (
-            <div >
+            <div>
                 {this.props.render(this.state.stringsArr)}
                 <input onChange={this.newString} value={this.state.value} />
                 <button onClick={this.addString}>Add String</button>

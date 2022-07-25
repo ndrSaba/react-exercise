@@ -9,49 +9,67 @@ import { Login } from "./Login";
 import { Welcome } from "./Welcome";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
+import { LanguageContext } from "./LanguageContext.js";
 
 export class App extends React.Component {
+    state = {
+        language: 'en'
+    }
+
+    changeLang = (event) => {
+        this.setState({
+            language: event.target.value
+        })
+    }
+
     render() {
         return (
-            <Container title="My Destroyed Application">
-                <div>
-                    <Hello />
-                    <Welcome name='John' age={28} />
-                    <Counter />
-                </div>
-                <div>
-                    <ClickCounter />
-                    <ClickTracker />
-                </div>
-                <div>
-                    <InteractiveWelcome />
-                </div>
-                <div>
-                    <Login />
-                    <UncontrolledLogin />
-                </div>
-                <div>
-                    <TodoList render={(stringsArr) => {
-                        return (
-                            <div>
-                                <ul>
-                                    {stringsArr.map((string, index) => (
-                                        <li key={string + index}>{string}
-                                            <button onClick={() => {
-                                                stringsArr.splice(index, 1);
-                                                this.setState({
-                                                    stringsArr: stringsArr
-                                                })
-                                            }}>Remove String</button>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )
-                    }} />
-                </div>
-            </Container>
-
+            <div>
+                <select value={this.state.language} onChange={this.changeLang}>
+                    <option value="en">ENGLISH</option>
+                    <option value="it">ITALIANO</option>
+                </select>
+                <LanguageContext.Provider value={this.state.language}>
+                    <Container title="My Destroyed Application">
+                        <div>
+                            <Hello />
+                            <Welcome name='John' age={28} />
+                            <Counter />
+                        </div>
+                        <div>
+                            <ClickCounter />
+                            <ClickTracker />
+                        </div>
+                        <div>
+                            <InteractiveWelcome />
+                        </div>
+                        <div>
+                            <Login />
+                            <UncontrolledLogin />
+                        </div>
+                        <div>
+                            <TodoList render={(stringsArr) => {
+                                return (
+                                    <div>
+                                        <ul>
+                                            {stringsArr.map((string, index) => (
+                                                <li key={string + index}>{string}
+                                                    <button onClick={() => {
+                                                        stringsArr.splice(index, 1);
+                                                        this.setState({
+                                                            stringsArr: stringsArr
+                                                        })
+                                                    }}>Remove String</button>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )
+                            }} />
+                        </div>
+                    </Container >
+                </LanguageContext.Provider>
+            </div>
         )
     }
 }
