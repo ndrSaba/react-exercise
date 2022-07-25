@@ -8,11 +8,12 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
 import { Welcome } from "./Welcome";
 import { TodoList } from "./TodoList";
+import { Container } from "./Container";
 
 export class App extends React.Component {
     render() {
         return (
-            <div>
+            <Container>
                 <div>
                     <Hello />
                     <Welcome name='John' age={28} />
@@ -26,13 +27,14 @@ export class App extends React.Component {
                     <InteractiveWelcome />
                 </div>
                 <div>
-                    <Login/>
-                    <UncontrolledLogin/>
+                    <Login />
+                    <UncontrolledLogin />
                 </div>
                 <div>
                     <TodoList />
                 </div>
-            </div>
+            </Container>
+
         )
     }
 }

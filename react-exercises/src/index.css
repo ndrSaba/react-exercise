@@ -2,3 +2,9 @@
     background-color: gray;
     border: 3px solid red;
 }
+
+.container {
+    background-color: white;
+    border: 3px solid red;
+    padding: 20px;
+}
