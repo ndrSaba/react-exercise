@@ -31,7 +31,24 @@ export class App extends React.Component {
                     <UncontrolledLogin />
                 </div>
                 <div>
-                    <TodoList />
+                    <TodoList render={(stringsArr) => {
+                        return (
+                            <div>
+                                <ul>
+                                    {stringsArr.map((string, index) => (
+                                        <li key={string + index}>{string}
+                                            <button onClick={() => {
+                                                stringsArr.splice(index, 1);
+                                                this.setState({
+                                                    stringsArr: stringsArr
+                                                })
+                                            }}>Remove String</button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )
+                    }} />
                 </div>
             </Container>
 
