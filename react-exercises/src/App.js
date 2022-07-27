@@ -9,29 +9,23 @@ import { Login } from "./Login";
 import { Welcome } from "./Welcome";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
-import { DisplayLanguage } from "./DisplayLanguage.js";
+import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
 
 export class App extends React.Component {
     render() {
         return (
             <div>
                 <Container title="My Destroyed Application">
-                    <div>
-                        <Hello />
-                        <Welcome name='John' age={28} />
-                        <Counter />
-                    </div>
-                    <div>
-                        <ClickCounter />
-                        <ClickTracker />
-                    </div>
-                    <div>
-                        <InteractiveWelcome />
-                    </div>
-                    <div>
-                        <Login />
-                        <UncontrolledLogin />
-                    </div>
+                    <Hello />
+                    <Welcome name='John' age={28} />
+                    <Counter />
+                    <ClickCounter />
+                    <ClickTracker />
+                    <InteractiveWelcome />
+                    <Login />
+                    <UncontrolledLogin />
+                    <Sum numbers={[1,2,3,4,5]}/>
                     <div>
                         <TodoList render={(stringsArr) => {
                             return (
@@ -51,8 +45,9 @@ export class App extends React.Component {
                                 </div>
                             )
                         }} />
+
                     </div>
-                <DisplayLanguage/>
+                    <DisplayLanguage />
                 </Container >
             </div>
         )

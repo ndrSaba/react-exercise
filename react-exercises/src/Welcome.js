@@ -5,10 +5,10 @@ export function Welcome(props) {
     return (
         <div className="welcome">
             <p>Welcome, {props.name}!</p>
-            <p>{props.age >= 18 & props.age <= 65 & props.name === 'John'
+            {props.age >= 18 & props.age <= 65 & props.name === 'John'
                 ? <Age age={props.age} />
                 : <></>}
-                {props.age < 18 && <span>You are very young!</span>}</p>
+                {props.age < 18 && <span>You are very young!</span>}
         </div>
     )
 }
