@@ -15,7 +15,7 @@ import { Sum } from "./Sum";
 export class App extends React.Component {
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <Container title="My Destroyed Application">
                     <Hello />
                     <Welcome name='John' age={28} />
@@ -25,7 +25,7 @@ export class App extends React.Component {
                     <InteractiveWelcome />
                     <Login />
                     <UncontrolledLogin />
-                    <Sum/>
+                    <Sum />
                     <div>
                         <TodoList render={(stringsArr) => {
                             return (
@@ -49,7 +49,7 @@ export class App extends React.Component {
                     </div>
                     <DisplayLanguage />
                 </Container >
-            </div>
+            </React.Fragment>
         )
     }
 }
