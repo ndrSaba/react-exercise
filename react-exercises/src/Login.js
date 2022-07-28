@@ -1,48 +1,47 @@
-import React from "react";
+import React , { useState } from "react";;
 
-export class Login extends React.Component{
-    state = {
+export function Login() {
+    const [data, setData] = useState({
         username: '',
         password: '',
-        remember: false
-    }
+        remember: false,
+    })
 
-    inputUpdate = (event) => {
-        const name = event.target.name
-        const value = event.target.value
-        const type = event.target.type
-        const checked = event.target.checked
-        
-        this.setState({
-            [name]: type === 'checkbox' ? checked : value 
+    const [login, setLogin] = useState()
+
+    function inputUpdate(event) {
+        const { name, type, value, checked } = event.target
+
+        setData((data) => {
+            return {
+                ...data,
+                [name]: type === 'checkbox' ? checked : value,
+            }
         })
+        console.log(data)
     }
 
-    loginButton = () => {
-        this.props.onLogin(this.state)
+    function loginButton() {
+        setLogin(login)
     }
 
-    resetLogin = () => {
-        this.setState({
+    function resetLogin() {
+        setData({
             username: '',
             password: '',
             remember: false
         })
     }
 
-    componentDidUpdate() {
-        console.log(this.state)
-    }
+    
 
-
-    render(){
-        return (
+    return (
         <div>
-            <input name="username" value={this.state.username} onChange={this.inputUpdate}/>
-            <input name="password" type="password" value={this.state.password} onChange={this.inputUpdate}/>
-            <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.inputUpdate}/>
-            <button style={{backgroundColor: this.state.password.length < 8 ? 'red' : 'green'}} id="login" disabled={!this.state.username || !this.state.password } onClick={this.loginButton}>Login</button>
-            <button id="reset"  onClick={this.resetLogin}>Reset</button>
+            <input name="username" value={data.username} onChange={inputUpdate} />
+            <input name="password" type="password" value={data.password} onChange={inputUpdate} />
+            <input name="remember" type="checkbox" checked={data.remember} onChange={inputUpdate} />
+            <button style={{ backgroundColor: data.password.length < 8 ? 'red' : 'green' }} id="login" disabled={!data.username || !data.password} onClick={loginButton}>Login</button>
+            <button id="reset" onClick={resetLogin}>Reset</button>
         </div>)
-    }
 }
+
