@@ -11,6 +11,7 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
+import { GithubUser } from "./GithubUser";
 
 export class App extends React.Component {
     render() {
@@ -45,9 +46,10 @@ export class App extends React.Component {
                                 </div>
                             )
                         }} />
-
+                        <GithubUser username= "ndrSaba" />
                     </div>
                     <DisplayLanguage />
+
                 </Container >
             </React.Fragment>
         )
