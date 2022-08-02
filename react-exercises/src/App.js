@@ -19,16 +19,16 @@ export class App extends React.Component {
         return (
             <React.Fragment>
                 <Container title="My Destroyed Application">
-                    <Hello />
-                    <Welcome name='John' age={28} />
-                    <Counter />
-                    <ClickCounter />
-                    <ClickTracker />
-                    <InteractiveWelcome />
-                    <Login />
-                    <UncontrolledLogin />
-                    <Sum />
                     <div>
+                        <Hello />
+                        <Welcome name='John' age={28} />
+                        <Counter />
+                        <ClickCounter />
+                        <ClickTracker />
+                        <InteractiveWelcome />
+                        <Login />
+                        <UncontrolledLogin />
+                        <Sum />
                         <TodoList render={(stringsArr) => {
                             return (
                                 <div>
@@ -47,11 +47,10 @@ export class App extends React.Component {
                                 </div>
                             )
                         }} />
-                        <GithubUser username= "ndrSaba" />
-                        <GithubUserList/>
+                        <GithubUser username="ndrSaba" />
+                        <GithubUserList />
+                        <DisplayLanguage />
                     </div>
-                    <DisplayLanguage />
-
                 </Container >
             </React.Fragment>
         )

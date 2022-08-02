@@ -10,10 +10,12 @@ export class ClickTracker extends React.Component {
     }
 
     render() {
-        return (<div>
+        return (
+        <div>
             <button name="button1" onClick={this.eventHandler}>Button 1</button>
             <button name="button2" onClick={this.eventHandler}>Button 2</button>
             <button name="button3" onClick={this.eventHandler}>Button 3</button>
-        </div>)
+        </div>
+        )
     }
 }
