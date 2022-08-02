@@ -33,7 +33,8 @@ export function GithubUser({ username }) {
             {error && <h1>è stato riscontrato un errore</h1>}
             {data && <h3><ul><li>Username: {data.name}</li>
                 <li>ID: {data.id}</li>
-                <li>Location: {data.location}</li>
+                <li>Location: {data.location && <span>{data.location}</span>}
+                {!data.location && <span>Unknown</span>}</li>
             </ul></h3>}
         </div>
     )

@@ -12,6 +12,7 @@ import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 
 export class App extends React.Component {
     render() {
@@ -47,6 +48,7 @@ export class App extends React.Component {
                             )
                         }} />
                         <GithubUser username= "ndrSaba" />
+                        <GithubUserList/>
                     </div>
                     <DisplayLanguage />
 
