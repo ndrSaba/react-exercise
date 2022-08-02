@@ -7,18 +7,18 @@ export function Counter({ initialValue = 0 }) {
         const _timer = setInterval(() => {
             setCounter(counter + 1)
         }, 1000)
-    
+
         return () => {
-        clearInterval(_timer);
-    }
+            clearInterval(_timer);
+        }
     })
 
     return (
-        
-            <div>
-                <CounterDisplay count={counter} />
-            </div>
-       
+
+        <div>
+            <CounterDisplay count={counter} />
+        </div>
+
     )
 }
 
