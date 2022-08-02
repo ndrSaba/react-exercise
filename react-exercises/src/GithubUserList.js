@@ -16,8 +16,8 @@ export function GithubUserList() {
 
     return (
         <div>
-            {list.map((username) => (
-                <GithubUser username={username} />
+            {list.map((username, index) => (
+                <GithubUser key={username+index} username={username} />
             ))}
             <input onChange={newUser} name="username" />
             <button onClick={userSubmit}>Aggiungi</button>
