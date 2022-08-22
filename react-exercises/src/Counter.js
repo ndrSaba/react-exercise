@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { CounterDisplay } from "./CounterDisplay";
 
 export function Counter({ initialValue = 0 }) {
     const [counter, setCounter] = useState(initialValue)
@@ -10,10 +11,13 @@ export function Counter({ initialValue = 0 }) {
         return () => {
             clearInterval(_timer);
         }
-    }, [counter])
+    })
 
     return (
-            <h2>Counter: {counter} </h2>
+
+        <div>
+            <CounterDisplay count={counter} />
+        </div>
+
     )
 }
-

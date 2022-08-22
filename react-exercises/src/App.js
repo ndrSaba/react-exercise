@@ -10,7 +10,7 @@ export function App() {
         <Container title={<Hello />}>
             <Routes>
                 <Route path="/" element={<Welcome name='John' age={28} />} />
-                <Route path="counter" element={<Counter />} />
+                <Route path="/counter" element={<Counter />} />
             </Routes>
         </Container>
     )
