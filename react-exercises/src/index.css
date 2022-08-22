@@ -1,12 +1,9 @@
 .welcome {
     background-color: gray;
-    border: 3px solid red;
+    border: 1px solid red;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
     background-color: white;
-    border: 3px solid red;
-    padding: 20px;
+    border: 1px solid maroon;
 }

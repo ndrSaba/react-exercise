@@ -1,13 +1,9 @@
-import { createRoot } from 'react-dom/client';
-import './index.css';
+import {createRoot} from 'react-dom/client';
 import { Root } from './Root';
-import React from 'react';
+import './index.css';
 
-const container = document.getElementById('root');
+
+const container = document.querySelector('#root');
 const root = createRoot(container);
 
-root.render(
-    <React.Fragment>
-        <Root />
-    </React.Fragment>
-    );
+root.render(<Root />);
