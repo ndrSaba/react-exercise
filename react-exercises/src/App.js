@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
@@ -14,13 +14,25 @@ import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { CarDetails } from "./CarDetails";
+import { LanguageContext } from "./LanguageContext";
 
-export class App extends React.Component {
-    render() {
-        return (
-            <React.Fragment>
+export function App() {
+    const [language, setLanguage] = useState("en")
+
+    function handleChangeLanguage(event) {
+        setLanguage(event.target.value)
+    }
+
+    return (
+        <React.Fragment>
+            <select onChange={handleChangeLanguage}>
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+            </select>
+            <LanguageContext.Provider value={language}>
                 <Container title="My Destroyed Application">
                     <div>
+                        <DisplayLanguage />
                         <Hello />
                         <Welcome name='John' age={28} />
                         <Counter />
@@ -50,11 +62,12 @@ export class App extends React.Component {
                         }} />
                         <GithubUser username="ndrSaba" />
                         <GithubUserList />
-                        <DisplayLanguage />
-                        <CarDetails/>
+                        
+
+                        <CarDetails />
                     </div>
                 </Container >
-            </React.Fragment>
-        )
-    }
+            </LanguageContext.Provider>
+        </React.Fragment >
+    )
 }
