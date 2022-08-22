@@ -31,6 +31,7 @@ export function App() {
             </select>
             <LanguageContext.Provider value={language}>
                 <Container title="My Destroyed Application">
+                    
                     <div>
                         <DisplayLanguage />
                         <Hello />
@@ -62,8 +63,6 @@ export function App() {
                         }} />
                         <GithubUser username="ndrSaba" />
                         <GithubUserList />
-                        
-
                         <CarDetails />
                     </div>
                 </Container >
