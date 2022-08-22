@@ -13,6 +13,7 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
+import { CarDetails } from "./CarDetails";
 
 export class App extends React.Component {
     render() {
@@ -50,6 +51,7 @@ export class App extends React.Component {
                         <GithubUser username="ndrSaba" />
                         <GithubUserList />
                         <DisplayLanguage />
+                        <CarDetails/>
                     </div>
                 </Container >
             </React.Fragment>
