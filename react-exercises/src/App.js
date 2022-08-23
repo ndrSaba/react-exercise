@@ -11,7 +11,7 @@ export function App() {
     return (
         <Container title={<Hello />}>
             <div>
-                <Link to="/">Home</Link> | <Link to="/counter">Counter</Link> | <Link to="/users">My GitHub Info</Link> | <Link to="/testPage">Not Found Test Page</Link>
+                <Link to="/">Home</Link> | <Link to="/counter">Counter</Link> | <Link to={`/users`}>My GitHub Info</Link> | <Link to="/testPage">Not Found Test Page</Link>
             </div>
             <Routes>
                 <Route path="/" element={<Welcome name='John' age={28} />} />
