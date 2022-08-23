@@ -3,7 +3,7 @@ import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 
 export function ShowGitHubUser() {
-    const { username } = useParams();
+    const { username = 'ndrSaba' } = useParams();
 
     return (
         <div>
