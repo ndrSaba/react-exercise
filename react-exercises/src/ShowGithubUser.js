@@ -3,11 +3,11 @@ import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 
 export function ShowGitHubUser() {
-    const { username = 'ndrSaba' } = useParams();
+    const { username } = useParams();
 
     return (
         <div>
-            <GithubUser username={"ndrSaba"} />
+            <GithubUser username={username} />
             <GithubUserList />
         </div>
     )
